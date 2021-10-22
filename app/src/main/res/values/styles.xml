@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Material_toolbar">
+        <item name="android:background">@drawable/toolbar</item>
+    </style>
+
+    <style name="tv_language">
+        <item name="android:background">@drawable/tv_language</item>
+    </style>
+</resources>
