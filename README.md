@@ -5,7 +5,7 @@ Criando um App para Apresentar seu Portfólio do GitHub.
 
 ## Sobre o projeto
 
-O projeto tem o bojetivo de criar uma aplicação para demonstrar o portifólio no GitHub de maneira elegante e simplificada, usando padrões de projeto e
+O projeto tem o bojetivo de criar uma aplicação para demonstrar o portifólio do GitHub de maneira elegante e simplificada, usando padrões de projeto e
 boas práticas de programação em Kotlin.
 
 Modifiquei o Layout para uma melhor visualização e adicionei novos recursos para uma melhor interação com o usuário.
