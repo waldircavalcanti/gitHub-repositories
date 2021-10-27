@@ -21,7 +21,19 @@ Modifiquei o Layout para uma melhor visualização e adicionei novos recursos pa
 - Color picker </br>
 
     
+## Layouts
+<br>
+  <p align="left">
 
+<img alt="no tasks"
+            src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_1.jpg" width="30%"
+            title="no tasks">
+  <img alt="create task"
+            src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_2.jpg" width="30%"
+            title="create task">
+  <img alt="all tasks"
+            src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_3.jpg" width="30%"
+            title="all tasks">
 
         
 
