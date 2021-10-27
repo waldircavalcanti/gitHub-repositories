@@ -11,7 +11,7 @@ boas práticas de programação em Kotlin.
 Modifiquei o Layout para uma melhor visualização e adicionei novos recursos para uma melhor interação com o usuário.
 
 
-## Features
+## Tecnologias utilizadas
 - Koin para a injeção de dependência </br>
 - Retrofit para acessar a Api do Github </br>
 - Glide para carregar as imagens </br>
