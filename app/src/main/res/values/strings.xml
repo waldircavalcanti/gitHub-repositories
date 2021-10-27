@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Repositórios GitHub</string>
     <string name="action_search">Pesquisar</string>
+    <string name="n_repositories">Possui %d repositórios públicos</string>
 </resources>

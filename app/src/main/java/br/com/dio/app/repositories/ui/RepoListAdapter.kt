@@ -1,5 +1,6 @@
 package br.com.dio.app.repositories.ui
 
+import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -34,9 +35,9 @@ class RepoListAdapter(private val onItemClicked: (Repo) -> Unit) :
             binding.tvRepoDescription.text = item.description
             binding.tvRepoLanguage.text = item.language
             binding.chipStar.text = item.stargazersCount.toString()
-
+            val url = "https://ui-avatars.com/api/?background=random&name=${item.name}"
             Glide.with(binding.root.context)
-                .load(item.owner.avatarURL).into(binding.ivOwner)
+                .load(Uri.parse(url)).into(binding.ivOwner)
 
             listColors().forEach { colors ->
                 if (colors.nameLanguage == item.language) {

@@ -7,5 +7,6 @@ data class Owner(
     @SerializedName("avatar_url")
     val avatarURL: String,
     @SerializedName("public_repos")
-    val publicRepos: Int
+    val publicRepos: Int,
+    val name: String
 )

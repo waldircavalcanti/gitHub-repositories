@@ -21,19 +21,22 @@
 
     <include
         android:id="@+id/include_empty"
-        layout="@layout/empty_state" />
+        layout="@layout/empty_state"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="33dp" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/homeUserAvatarIv"
-        android:layout_width="88dp"
-        android:layout_height="88dp"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
         android:layout_margin="24dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="20dp"
         android:outlineProvider="background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+        app:shapeAppearanceOverlay="@style/Circle"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_repos"
@@ -46,5 +49,28 @@
         app:layout_constraintVertical_bias="0.0"
         tools:itemCount="5"
         tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tv_repo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@tools:sample/full_names"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_marginStart="4dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/homeUserAvatarIv"
+        app:layout_constraintTop_toTopOf="@+id/homeUserAvatarIv" />
+
+    <TextView
+        android:id="@+id/tv_repo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text = "Possui x repositorios"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_repo_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

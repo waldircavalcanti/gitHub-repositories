@@ -1,6 +1,8 @@
 package br.com.dio.app.repositories.data.di
 
 import android.util.Log
+import br.com.dio.app.repositories.data.repositories.OwnerRepository
+import br.com.dio.app.repositories.data.repositories.OwnerRepositoryImpl
 import br.com.dio.app.repositories.data.repositories.RepoRepository
 import br.com.dio.app.repositories.data.repositories.RepoRepositoryImpl
 import br.com.dio.app.repositories.data.services.GitHubService
@@ -48,7 +50,9 @@ object DataModule {
     private fun repositoriesModule(): Module {
         return module {
             single<RepoRepository> { RepoRepositoryImpl(get()) }
+            single<OwnerRepository> {OwnerRepositoryImpl(get())}
         }
+
     }
 
     private inline fun <reified T> createService(client: OkHttpClient, factory: GsonConverterFactory): T {

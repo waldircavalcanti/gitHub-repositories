@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         }
     }
 
-
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         setSupportActionBar(binding.toolbar)
         binding.rvRepos.adapter = adapter
 
+        bindOwnerProfile()
 
         viewModel.repos.observe(this) {
 
@@ -65,6 +66,21 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
             }
 
+        }
+    }
+
+    private fun bindOwnerProfile() {
+        viewModel.owner.observe(this) {
+            when (it) {
+                is MainViewModel.OwnerState.Success -> {
+                    val owner = it.owner
+                    setOwnerAvatar(owner.avatarURL)
+                    binding.tvRepoName.text = owner.name
+                    binding.tvRepo.text = getString(R.string.n_repositories, owner.publicRepos)
+                    Log.e("TAG", "bindOwner")
+                }
+
+            }
         }
     }
 
@@ -95,5 +111,12 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         startActivity(intent)
     }
+
+    private fun setOwnerAvatar(avatarURL: String){
+
+            Glide.with(binding.root.context)
+                .load(Uri.parse(avatarURL))
+                .into(binding.homeUserAvatarIv)
+        }
 
 }
