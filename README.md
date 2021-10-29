@@ -40,6 +40,10 @@ Modifiquei o Layout para uma melhor visualização e adicionei novos recursos pa
 
 
 
+https://user-images.githubusercontent.com/64696649/139497023-2cb06123-a868-40d4-930f-68e2988515d6.mp4
+
+
+
 
 
 
