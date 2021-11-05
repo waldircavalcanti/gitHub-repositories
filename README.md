@@ -5,7 +5,7 @@ Criando um App para Apresentar seu Portfólio do GitHub.
 
 ## Sobre o projeto
 
-O projeto tem o bojetivo de criar uma aplicação para demonstrar o portifólio do GitHub de maneira elegante e simplificada, usando padrões de projeto e
+O projeto tem o objetivo de criar uma aplicação para demonstrar o portifólio do GitHub de maneira elegante e simplificada, usando padrões de projeto e
 boas práticas de programação em Kotlin.
 
 Modifiquei o Layout para uma melhor visualização e adicionei novos recursos para uma melhor interação com o usuário.
@@ -18,13 +18,29 @@ Modifiquei o Layout para uma melhor visualização e adicionei novos recursos pa
 - Ordenação dos resultados por data do último push </br>
 - MVVM </br>
 - Lifecycle para trabalhar com LiveData e ViewModels</br>
-- Color picker </br>
+- Verificação de status de conectividade com a internet </br>
 
     
+## Layouts
+<br>
+  <p align="left">
 
+<img alt="no tasks"
+            src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_1.jpg" width="30%"
+            title="no tasks">
+  <img alt="create task"
+            src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_2.jpg" width="30%"
+            title="create task">
+  <img alt="all tasks"
+            src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_3.jpg" width="30%"
+            title="all tasks">
 
         
 
+
+
+
+https://user-images.githubusercontent.com/64696649/139497023-2cb06123-a868-40d4-930f-68e2988515d6.mp4
 
 
 
