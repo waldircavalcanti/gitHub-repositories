@@ -34,6 +34,9 @@ Modifiquei o Layout para uma melhor visualização e adicionei novos recursos pa
   <img alt="all tasks"
             src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_3.jpg" width="30%"
             title="all tasks">
+    <img alt="all tasks"
+            src="https://github.com/waldircavalcanti/gitHub-repositories/blob/master/Screenshot_4.jpg" width="30%"
+            title="all tasks">
 
         
 
