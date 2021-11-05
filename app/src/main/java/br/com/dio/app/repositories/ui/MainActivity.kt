@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Lifecycle
@@ -17,6 +18,7 @@ import androidx.lifecycle.LifecycleOwner
 import br.com.dio.app.repositories.R
 import br.com.dio.app.repositories.core.createDialog
 import br.com.dio.app.repositories.core.createProgressDialog
+import br.com.dio.app.repositories.core.hasInternet
 import br.com.dio.app.repositories.core.hideSoftKeyboard
 import br.com.dio.app.repositories.data.model.Owner
 import br.com.dio.app.repositories.databinding.ActivityMainBinding
@@ -46,15 +48,22 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
         bindOwnerProfile()
 
+
         viewModel.repos.observe(this) {
 
             when (it) {
                 MainViewModel.State.Loading -> dialog.show()
                 is MainViewModel.State.Error -> {
-                    createDialog {
-                        setMessage(it.error.message)
-                        Log.e("TAG", "Erro UsuarioMainActivity")
-                    }.show()
+
+                    if (!hasInternet()) {
+                        hasInternet()
+                        //Toast.makeText(this,R.string.has_internet,Toast.LENGTH_SHORT).show()
+                    } else {
+                        createDialog {
+                            setMessage(it.error.message)
+                            Log.e("TAG", "Erro UsuarioMainActivity")
+                        }.show()
+                    }
                     dialog.dismiss()
                 }
                 is MainViewModel.State.Success -> {
@@ -67,6 +76,15 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
             }
 
         }
+    }
+
+    override fun onStart() {
+        if (!hasInternet()) {
+            Toast.makeText(this, R.string.has_internet, Toast.LENGTH_SHORT).show()
+            Log.e("TAG", "Erro OnStart")
+        }
+
+        super.onStart()
     }
 
     private fun bindOwnerProfile() {
@@ -89,17 +107,22 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         menuInflater.inflate(R.menu.main_menu, menu)
         val searchView = menu.findItem(R.id.action_search).actionView as SearchView
         searchView.setOnQueryTextListener(this)
+
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         query?.let { viewModel.getRepoList(it) }
         binding.root.hideSoftKeyboard()
+        if (!hasInternet()) {
+            Toast.makeText(this, R.string.has_internet, Toast.LENGTH_SHORT).show()
+        }
         return true
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
         Log.e(TAG, "onQueryTextChange: $newText")
+
         return false
     }
 
@@ -112,11 +135,11 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         startActivity(intent)
     }
 
-    private fun setOwnerAvatar(avatarURL: String){
+    private fun setOwnerAvatar(avatarURL: String) {
 
-            Glide.with(binding.root.context)
-                .load(Uri.parse(avatarURL))
-                .into(binding.homeUserAvatarIv)
-        }
+        Glide.with(binding.root.context)
+            .load(Uri.parse(avatarURL))
+            .into(binding.homeUserAvatarIv)
+    }
 
 }
