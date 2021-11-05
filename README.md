@@ -18,7 +18,7 @@ Modifiquei o Layout para uma melhor visualização e adicionei novos recursos pa
 - Ordenação dos resultados por data do último push </br>
 - MVVM </br>
 - Lifecycle para trabalhar com LiveData e ViewModels</br>
-- Color picker </br>
+- Verificação de status de conectividade com a internet </br>
 
     
 ## Layouts
